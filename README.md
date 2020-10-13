@@ -13,12 +13,14 @@ experimental_df<- experimental_df%>% dplyr::na_if("None")
 experimental_df<- experimental_df%>% dplyr::na_if("")
 
 ```
+
+```{R}
 # exclude participant number 37669 only 17% solved correct and only with insight, also bilangual with Turkish as mothertongue
 # subject 39823 was by accident included but did not adhere to the instructions, she/he slept to little, sleep<6h
 
 mixedef_correct_incorrect<-mixedef_correct_incorrect%>%
   filter(subject != "37669" & subject != "39823" & baseline_RMSSD > 0)
-
+```
 
 ```{R}
 ####################################
